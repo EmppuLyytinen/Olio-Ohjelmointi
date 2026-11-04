@@ -1,11 +1,11 @@
 #include <iostream>
 #include <iomanip>
+#include <stdexcept>
 
 using namespace std;
 void calcSum(int a, int b);
 void calcDiv(int a, int b);
 int retsum(int a, int b);
-void retdiv(int a, int b);
 float returndiv(int a, int b);
 
 int main()
@@ -21,13 +21,16 @@ int main()
 
     calcSum(a, b);
     calcDiv(a, b);
+    retsum(a,b);
+    int summa = retsum(a, b);
+    cout << "palautettu summa: " << summa << endl;
     try {
-
+        float tulos = returndiv(a, b);
+        cout << fixed << setprecision(2) << "palautettu osamaara: " << tulos << endl;
     }
-    catch (const runtime_error& e){
+    catch(const runtime_error& e){
         cout << e.what() << endl;
     }
-
     return 0;
 }
 
@@ -40,7 +43,7 @@ void calcSum(int a, int b){
 void calcDiv(int a, int b){
 
     if(b == 0){
-        cout << "Jakajana ei saa olla nolla";
+        cout << "Jakajana ei saa olla nolla" << endl;
         return;
     }
     float div = static_cast<float>(a)/b;
