@@ -9,7 +9,7 @@
 using namespace std;
 
 int main(){
-    Car auto1;;
+    Car auto1;
     auto1.setBrand("Volvo");
     auto1.setModel("V60");
     auto1.setYearModel(2020);
