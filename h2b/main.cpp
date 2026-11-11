@@ -12,6 +12,7 @@ int main()
     carList.emplace_back("BMW","320i",2019);
 
     carList[1].printData();
+    std::cout << std::endl;
 
 
     for(int i = 0;i < 3;i++)
